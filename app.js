@@ -1,8 +1,12 @@
-var titles = document.getElementsByTagName("title");
+const wrap = document.querySelector('book-list li:nth-child(2) .name');
+// console.log(wmf);
 
-console.log(Array.isArray(titles));
-console.log(Array.isArray(Array.from(titles)));
+var book =document.querySelector('#book-list li .name');
+//console.log(books);
 
-titles.forEach(function(item){
-    console.log(item);
-})
+book = document.querySelectorAll('#book-list li .name');
+//console.log(books);
+
+Array.from(book).forEach(function(book){
+    console.log(book);
+});    
