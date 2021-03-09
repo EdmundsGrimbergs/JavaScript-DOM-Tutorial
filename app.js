@@ -1,12 +1,9 @@
-const wrap = document.querySelector('book-list li:nth-child(2) .name');
-// console.log(wmf);
+var books = document.querySelectorAll('#book-list li .name')
 
-var book =document.querySelector('#book-list li .name');
-//console.log(books);
+Array.from(books).forEach(function(book){
+    book.textContent +=' (book title)';
+});
 
-book = document.querySelectorAll('#book-list li .name');
-//console.log(books);
-
-Array.from(book).forEach(function(book){
-    console.log(book);
-});    
+const bookList = document.querySelector('#book-list');
+//bookList.innerHTML = '<h2>Book and more books...</h2>';
+bookList.innerHTML += '<p>This is how you add HTML</p>';
