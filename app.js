@@ -32,7 +32,7 @@ addForm.addEventLister('subit',function(e){
     li.appendChild(deleteBtn);
     list.appendChild(li);
 
-
+});
 
 // hide books
 const hideBox = document.querySelector('#hide');
@@ -43,3 +43,17 @@ hideBox.addEventListener('change', function(e){
         list.style.display = "initial";
     }
 });
+
+//filter books
+const searchBar = document.forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = list.getElementsByTagName('li');
+    Array.from(books).forEach(function(book){
+        const title = book.firstElementChild.textContent;
+        if(title.toLocaleUpperCase().indexOf(term)!=-1){
+            books.style.display = 'block';
+        }else{
+            book.style.display = 'none';
+        }
+    })
