@@ -1,4 +1,4 @@
-const list = document.querySelector(e){
+const list = document.querySelector('#book-list ul');
 
 //delete books
 list.addEventLister('click',function(e){
@@ -33,4 +33,13 @@ addForm.addEventLister('subit',function(e){
     list.appendChild(li);
 
 
+
+// hide books
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change', function(e){
+    if(hideBox.checked){
+        list.style.display = "none";
+    }else {
+        list.style.display = "initial";
+    }
 });
